@@ -14,6 +14,7 @@ const Home: NextPage = () => {
   const searchInputRef = useRef<SearchInputType | null>(null);
 
   // Todo: Imprement search function
+  // Todo: type more explicitly of argument
   const search = (event: any) => {
     event.preventDefault();
     const term  = searchInputRef.current?.value;

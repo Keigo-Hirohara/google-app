@@ -1,6 +1,7 @@
 import React from 'react';
 import {useSession, signIn, signOut} from "next-auth/react";
 
+// Todo: type more explicitly of argument
 const User = ({className}: any) => {
   const { data: session } = useSession();
 

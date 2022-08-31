@@ -1,8 +1,10 @@
 import React from 'react';
 import {useRouter} from "next/router";
 
+// Todo: type more explicitly of argument
 const SearchHeaderOption = ({title, Icon, selected}: any) => {
   const router = useRouter();
+  // Todo: type more explicitly of argument
   const selectTab = (title: any) => {
     router.push(
       `/search?term=${router.query.term}&searchType=${title === "Images" ? "image" : ""}`

@@ -1,10 +1,12 @@
 import React from 'react';
 import PagenationButtons from './PagenationButtons';
 
+// Todo: type more explicitly of argument
 const ImageResults = ({results}: any) => {
   return (
     <div className="mt-4">
       <div className="grid">
+      {/* Todo: type more explicitly of argument */}
         {results.items?.map((result: any) => (
           <div className="mb-8" key={result.link}>
             <div className="group">
