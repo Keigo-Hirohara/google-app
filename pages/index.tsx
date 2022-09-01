@@ -7,30 +7,26 @@ import Footer from '../components/Footer';
 import React, { useRef } from 'react';
 import { useRouter } from 'next/router';
 import {EventType} from '../types/event';
+import {SearchInputType} from '../types/search-input';
 
 // Todo: create new file and type more explicitly of argument
-type SearchInputType = any;
 
 const Home: NextPage = () => {
   const router = useRouter();
-  const searchInputRef = useRef<SearchInputType | null>(null);
+  const searchInputRef = useRef<SearchInputType>(null);
 
-  // Todo: type more explicitly of argument
   const search = (event: EventType) => {
     event.preventDefault();
     const term  = searchInputRef.current?.value;
-    if (!term.trim()) return;
+    if (!term) return;
     router.push(`/search?term=${term.trim()}&searchType=`);
   }
 
-  // Todo: type more explicitly of argument
   const randomSearch = async (event: EventType) => {
     event.preventDefault();
     const randomTerm = await fetch("https://random-word-api.herokuapp.com/word?number=1")
       .then((response) => response.json());
-    if (randomTerm == null) {
-      return;
-    }
+    if (randomTerm == null) return;
     router.push(`/search?term=${randomTerm}&searchType=`);
   }
 
@@ -42,10 +38,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Header */}
       <Header/>
 
-      {/* Body */}
       <form className="flex flex-col items-center mt-40">
         <Image
         width="300"
@@ -71,8 +65,6 @@ const Home: NextPage = () => {
           </button>
         </div>
       </form>
-
-      {/* Footer */}
 
       <Footer/>
     </div>

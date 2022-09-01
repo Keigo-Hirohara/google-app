@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import {useSession, signIn, signOut} from "next-auth/react";
+import { ClassNameAtSearchPage } from '../types/class-name-at-search-page';
 
-const User = (className: string) => {
+
+const User = ({className}: ClassNameAtSearchPage) => {
   const { data: session } = useSession();
+  console.log(className);
 
   const signInWrapper = () => {
     signIn();
@@ -12,7 +15,6 @@ const User = (className: string) => {
     signOut();
   }
 
-  // Todo: fix user session undefined issue
   if (session?.user?.image) {
     return (
       <>

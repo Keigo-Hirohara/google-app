@@ -44,7 +44,7 @@ const SearchHeader = () => {
           <SearchIcon className='h-6 hidden sm:inlien-flex text-blue-500'/>
           <button onClick={search} type="submit" hidden></button>
         </form>
-        <User className="ml-auto white-nowrap"/>
+        <User className="ml-auto whitespace-nowrap"/>
       </div>
       <SearchHeaderOptions/>
     </header>

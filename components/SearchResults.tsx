@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PagenationButtons from './PagenationButtons';
 import Parser from 'html-react-parser';
 

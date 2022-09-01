@@ -5,6 +5,7 @@ import SearchHeader from '../components/SearchHeader';
 import ImageResults from '../components/ImageResults';
 import SearchResults from '../components/SearchResults';
 
+// Todo: type more explicitly of argument
 const search = ({results}: any) => {
   const router = useRouter();
   return (
