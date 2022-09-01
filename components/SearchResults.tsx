@@ -2,6 +2,7 @@ import React from 'react';
 import PagenationButtons from './PagenationButtons';
 import Parser from 'html-react-parser';
 
+// Todo: type more explicitly of argument
 const SearchResults = ({results}: any) => {
   return (
     <div className="w-full mx-auto px-3 sm:pl-[5%] md:pl-[14%] lg:pl-52">

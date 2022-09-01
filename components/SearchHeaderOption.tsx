@@ -15,7 +15,7 @@ const SearchHeaderOption = ({title, Icon, selected}: any) => {
       className={`flex items-center space-x-1 border-b-4 border-transparent hover:text-blue-500 cursor-pointer hover:borde-:blue-500 pb-3 ${selected && "text-blue-500 border-blue-500"}`}
       onClick={() => selectTab(title)}
     >
-      <Icon clasName="h-4"/>
+      <Icon className="h-4"/>
       <p>{title}</p>
     </div>
   );

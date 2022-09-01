@@ -4,27 +4,34 @@ import Image from 'next/image'
 import {SearchIcon, MicrophoneIcon} from '@heroicons/react/solid';
 import Header from '../components/Header'
 import Footer from '../components/Footer';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { useRouter } from 'next/router';
+import {EventType} from '../types/event';
 
+// Todo: create new file and type more explicitly of argument
 type SearchInputType = any;
 
 const Home: NextPage = () => {
   const router = useRouter();
   const searchInputRef = useRef<SearchInputType | null>(null);
 
-  // Todo: Imprement search function
   // Todo: type more explicitly of argument
-  const search = (event: any) => {
+  const search = (event: EventType) => {
     event.preventDefault();
     const term  = searchInputRef.current?.value;
     if (!term.trim()) return;
     router.push(`/search?term=${term.trim()}&searchType=`);
   }
 
-  // Todo: Imprement randomSearch function
-  const randomSearch = () => {
-    console.log('randomSearch実行');
+  // Todo: type more explicitly of argument
+  const randomSearch = async (event: EventType) => {
+    event.preventDefault();
+    const randomTerm = await fetch("https://random-word-api.herokuapp.com/word?number=1")
+      .then((response) => response.json());
+    if (randomTerm == null) {
+      return;
+    }
+    router.push(`/search?term=${randomTerm}&searchType=`);
   }
 
   return (
@@ -60,7 +67,7 @@ const Home: NextPage = () => {
             Google Search
           </button>
           <button onClick={randomSearch} className="btn">
-            I am feeling lucky
+            Ramdom Search
           </button>
         </div>
       </form>
