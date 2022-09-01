@@ -6,7 +6,6 @@ import ImageResults from '../components/ImageResults';
 import SearchResults from '../components/SearchResults';
 
 const search = ({results}: any) => {
-  console.log(results);
   const router = useRouter();
   return (
     <div>
