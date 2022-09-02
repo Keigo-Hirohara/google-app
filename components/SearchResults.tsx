@@ -4,7 +4,6 @@ import Parser from 'html-react-parser';
 import { SearchItemType, SearchResultsType } from '../types/opts/search-results';
 
 const SearchResults = ({results}: SearchResultsType) => {
-  console.log(results);
 
   if (results.error.code == 429) {
     return (
