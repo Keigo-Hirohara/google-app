@@ -9,8 +9,6 @@ import { useRouter } from 'next/router';
 import {EventType} from '../types/event';
 import {SearchInputType} from '../types/search-input';
 
-// Todo: create new file and type more explicitly of argument
-
 const Home: NextPage = () => {
   const router = useRouter();
   const searchInputRef = useRef<SearchInputType>(null);

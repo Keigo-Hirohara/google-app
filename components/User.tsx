@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import {useSession, signIn, signOut} from "next-auth/react";
-import { ClassNameAtSearchPage } from '../types/class-name-at-search-page';
+import { SearchPageClassType } from '../types/search-page-class';
 
 
-const User = ({className}: ClassNameAtSearchPage) => {
+const User = ({className}: SearchPageClassType) => {
   const { data: session } = useSession();
-  console.log(className);
 
   const signInWrapper = () => {
     signIn();

@@ -4,17 +4,16 @@ import Image from "next/image";
 import {XIcon, MicrophoneIcon, SearchIcon} from "@heroicons/react/solid";
 import User from './User';
 import SearchHeaderOptions from './SearchHeaderOptions';
-
-type SearchInputType = any;
+import { SearchInputType } from '../types/search-input';
 
 const SearchHeader = () => {
   const router = useRouter();
   const searchInputRef = useRef<SearchInputType | null>(null);
   
-  const search = (event: any) => {
+  const search = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
     event.preventDefault();
     const term  = searchInputRef.current?.value;
-    if (!term.trim()) return;
+    if (!term) return;
     router.push(`/search?term=${term.trim()}&searchType=`);
   }
 
@@ -37,7 +36,7 @@ const SearchHeader = () => {
             className="w-full focus:outline-none"
           />
           <XIcon 
-            onClick={() => (searchInputRef.current.value = "")}
+            onClick={() => (searchInputRef.current == null ? null : searchInputRef.current.value = "")}
             className="h-7 text-gray-500 cursor-pointer sm:mr-3"
           />
           <MicrophoneIcon className="h-6 hidden sm:inline-flex text-blue-500 pl-4 border-l-2 border-gray-300 mr-3" />
