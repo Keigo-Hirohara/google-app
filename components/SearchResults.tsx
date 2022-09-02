@@ -5,7 +5,7 @@ import { SearchItemType, SearchResultsType } from '../types/opts/search-results'
 
 const SearchResults = ({results}: SearchResultsType) => {
 
-  if (results.error.code == 429) {
+  if (results.error?.code == 429) {
     return (
       <div className="w-full mx-auto px-3 sm:pl-[5%] md:pl-[14%] lg:pl-52">
         <h2 className='mt-10'>申し訳ありません！検索数の上限を超えてしまいました！</h2>

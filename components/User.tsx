@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {useSession, signIn, signOut} from "next-auth/react";
 import { SearchPageClassType } from '../types/opts/search-page-class';
+import Image from 'next/image';
 
 
 const User = ({className}: SearchPageClassType) => {
@@ -16,9 +17,9 @@ const User = ({className}: SearchPageClassType) => {
 
   if (session?.user?.image) {
     return (
-      <>
-      <img className={`h-10 w-10 rounded-full hover:bg-gray-200 cursor-pointer p-1 ${className}`} onClick={signOutWrapper} alt="user-image" src={session.user?.image}/>
-      </>
+      <div className='relative'>
+      <Image className={`rounded-full hover:bg-gray-200 cursor-pointer p-1 ${className}`} width="40" height="40" onClick={signOutWrapper} alt="user-image" src={session.user?.image} />
+      </div>
     )
   }
 

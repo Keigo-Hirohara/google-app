@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../components/Header';
 import {getProviders, signIn} from 'next-auth/react';
 import { SignInPropType } from '../../types/opts/sign-in-prop';
+import Image from 'next/image';
 
 const SignIn = (props: SignInPropType) => {
   return (
@@ -10,8 +11,9 @@ const SignIn = (props: SignInPropType) => {
       <div className="mt-40">
         {Object.values(props.providers).map(provider => (
           <div key={provider.name} className="flex flex-col items-center">
-            <img
-              className='w-52 object-cover'
+            <Image
+              className='object-cover'
+              width="240px" height="80"
               src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png"
               alt="google-logo"
             />

@@ -38,12 +38,13 @@ const Home: NextPage = () => {
 
       <Header/>
 
-      <form className="flex flex-col items-center mt-40">
+      <form className="flex relative flex-col items-center mt-40">
         <Image
         width="300"
         objectFit="cover"
         height="100"
         src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png"
+        alt="google image"
         />
         <div className="flex w-full mt-5 mx-auto max-w-[90%] border border-gray-200 hover:shadow-lg focus-within:shadow-lg px-5 py-3 rounded-full items-center sm:max-w-xl lg:max-w-2xl">
           <SearchIcon className="h-5 text-gray-500 mr-3"/>

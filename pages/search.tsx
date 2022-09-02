@@ -7,10 +7,10 @@ import ImageResults from '../components/ImageResults';
 import SearchResults from '../components/SearchResults';
 import { SearchResultsType } from '../types/opts/search-results';
 
-const search = ({results}: SearchResultsType) => {
+const Search: React.FC<SearchResultsType> = ({results}: SearchResultsType) => {
   const router = useRouter();
   return (
-    <div>
+    <div className='relative'>
       <Head>
         <title>{router.query.term} - Google 検索</title>
       </Head>
@@ -40,4 +40,4 @@ export async function getServerSideProps(context: ContextType) {
   }
 }
 
-export default search;
+export default Search;
