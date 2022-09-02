@@ -6,7 +6,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer';
 import React, { useRef } from 'react';
 import { useRouter } from 'next/router';
-import {EventType} from '../types/event';
+import {EventType} from '../types/opts/event';
 import {SearchInputType} from '../types/search-input';
 
 const Home: NextPage = () => {

@@ -1,12 +1,11 @@
 import React from 'react';
-import { SearchItemType, SearchResultsType } from '../types/search-results';
+import { SearchItemType, SearchResultsType } from '../types/opts/search-results';
 import PagenationButtons from './PagenationButtons';
 
 const ImageResults = ({results}: SearchResultsType) => {
   return (
     <div className="mt-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg: grid-cols-3 xl:grid-cols-4 px-3 space-x-4">
-      {/* Todo: type more explicitly of argument */}
         {results.items?.map((result: SearchItemType) => (
           <div className="mb-8" key={result.link}>
             <div className="group">

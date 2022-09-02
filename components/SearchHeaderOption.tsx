@@ -1,6 +1,6 @@
 import React from 'react';
 import {useRouter} from "next/router";
-import { SearchHeaderMetaType } from '../types/search-header-meta';
+import { SearchHeaderMetaType } from '../types/opts/search-header-meta';
 
 const SearchHeaderOption = ({title, Icon, selected}: SearchHeaderMetaType) => {
   const router = useRouter();

@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header';
 import {getProviders, signIn} from 'next-auth/react';
-import { SignInPropType } from '../../types/sign-in-prop';
+import { SignInPropType } from '../../types/opts/sign-in-prop';
 
 const SignIn = (props: SignInPropType) => {
   return (
