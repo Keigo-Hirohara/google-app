@@ -5,6 +5,9 @@ export type SearchResultsType = {
       formattedTotalResults: string;
       formattedSearchTime: string;
     };
+    error: {
+      code: number;
+    };
     items: SearchItemType[];
   };
 };

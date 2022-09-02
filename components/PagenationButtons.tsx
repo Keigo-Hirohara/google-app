@@ -28,7 +28,7 @@ const PagenationButtons = () => {
         >
           <div className="cursor-pointer flex flex-col items-center hover:underline">
             <ChevronRightIcon className="h-5"/>
-            <p>Next</p>
+            <p>次ページ</p>
           </div>
         </Link>
       )

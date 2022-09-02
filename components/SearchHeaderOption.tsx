@@ -4,7 +4,6 @@ import { SearchHeaderMetaType } from '../types/opts/search-header-meta';
 
 const SearchHeaderOption = ({title, Icon, selected}: SearchHeaderMetaType) => {
   const router = useRouter();
-
   const selectTab = (title: SearchHeaderMetaType['title']) => {
     router.push(
       `/search?term=${router.query.term}&searchType=${title === "Images" ? "image" : ""}`

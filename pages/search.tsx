@@ -12,7 +12,7 @@ const search = ({results}: SearchResultsType) => {
   return (
     <div>
       <Head>
-        <title>{router.query.term} - Search Page</title>
+        <title>{router.query.term} - Google 検索</title>
       </Head>
       <SearchHeader/>
       {router.query.searchType === "image" ? (
