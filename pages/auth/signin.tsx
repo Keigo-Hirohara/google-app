@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header';
 import {getProviders, signIn} from 'next-auth/react';
-import { SignInPropType } from '../../types/sign-in-prop';
+import { SignInPropType } from '../../types/opts/sign-in-prop';
 
 const SignIn = (props: SignInPropType) => {
   return (
@@ -15,7 +15,7 @@ const SignIn = (props: SignInPropType) => {
               src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png"
               alt="google-logo"
             />
-            <p className='text-sm italic my-10 text-center'>This website is created for learning purposes</p>
+            <p className='text-sm italic my-10 text-center'>このページは学習のために作成されています</p>
             <button
               className='bg-red-400 rounded-lg text-white p-3 hover:bg-red-500'
               onClick={() => signIn(provider.id, {callbackUrl: "/"})}

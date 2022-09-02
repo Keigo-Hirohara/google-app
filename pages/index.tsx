@@ -6,7 +6,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer';
 import React, { useRef } from 'react';
 import { useRouter } from 'next/router';
-import {EventType} from '../types/event';
+import {EventType} from '../types/opts/event';
 import {SearchInputType} from '../types/search-input';
 
 const Home: NextPage = () => {
@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   const search = (event: EventType) => {
     event.preventDefault();
     const term  = searchInputRef.current?.value;
-    if (!term) return;
+    if (term == null || term == "") return;
     router.push(`/search?term=${term.trim()}&searchType=`);
   }
 
@@ -56,10 +56,10 @@ const Home: NextPage = () => {
         </div>
         <div className="flex flex-col sm:flex-row w-[50%] space-y-2 mt-8 sm:space-y-0 sm:space-x-4 justify-center">
           <button onClick={search} className="btn">
-            Google Search
+            検索
           </button>
           <button onClick={randomSearch} className="btn">
-            Ramdom Search
+            ランダム検索
           </button>
         </div>
       </form>

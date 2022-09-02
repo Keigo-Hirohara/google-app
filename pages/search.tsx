@@ -1,18 +1,18 @@
 import React from 'react';
 import {useRouter} from 'next/router';
 import Head from 'next/head';
-import { ContextType } from '../types/context';
+import { ContextType } from '../types/opts/context';
 import SearchHeader from '../components/SearchHeader';
 import ImageResults from '../components/ImageResults';
 import SearchResults from '../components/SearchResults';
-import { SearchResultsType } from '../types/search-results';
+import { SearchResultsType } from '../types/opts/search-results';
 
 const search = ({results}: SearchResultsType) => {
   const router = useRouter();
   return (
     <div>
       <Head>
-        <title>{router.query.term} - Search Page</title>
+        <title>{router.query.term} - Google 検索</title>
       </Head>
       <SearchHeader/>
       {router.query.searchType === "image" ? (
@@ -32,7 +32,6 @@ export async function getServerSideProps(context: ContextType) {
      await fetch(`https://www.googleapis.com/customsearch/v1?key=${
       process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${context.query.term}${context.query.searchType && "&searchType=image"}&start=${startIndex}`)
       .then((response) => response.json());
-  console.log(typeof(context));
   
   return {
     props: {
